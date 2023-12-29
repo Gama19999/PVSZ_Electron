@@ -11,7 +11,6 @@ $(document).ready(() => {
 	});
 
 	$("#vol-up").on('click', () => {
-		//btn_click();
 		let vol = $("#mp3").prop("volume");
 		if ((vol + 0.1) > 1) return;
 		$("#mp3").prop("volume", vol+=0.1);
@@ -35,5 +34,31 @@ $(document).ready(() => {
 		if ((vol - 0.1) < 0) return;
 		$("#mp3").prop("volume", vol-=0.1);
 	});
+
+	$("#level").on('click', () => {
+		let lvl = $("#level").val().substring(6,7);
+		console.log(lvl);
+
+		// TODO process lvl
+
+		start_game(lvl);
+	});
 	
 });
+
+function start_game(lvl) {
+	$("#home-container").css("display","none");
+
+	/*switch (lvl) {
+
+	}*/
+
+	$("#game-container").css({
+		"background": `url('./images/game/levels/${lvl}/back.png') no-repeat`,
+		"background-size": "100% 100%",
+		"display": "flex"
+	});
+
+	$("#mp3").attr('src', `./sounds/levels/${lvl}/back.mp3`);
+	$("#mp3").get(0).play();
+}

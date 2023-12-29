@@ -4,15 +4,25 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Plants VS Zombies</title>
-	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="stylesheet" type="text/css" href="./css/home.css">
+	<link rel="stylesheet" type="text/css" href="./css/game.css">
 	<link rel="icon" href="./images/icon.png">
 	<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
 	<script type="text/javascript" src="./js/SFX.js"></script>
 </head>
 <body>
-	<div id="container">
+	<!-- Background music element -->
+	<audio id="mp3" loop="loop"></audio>
+
+
+
+	<!-- Home Section -->
+	<div id="home-container">
+
+		<!-- Settings Button -->
 		<input type="button" id="btn-settings">
 
+		<!-- Settings Panel -->
 		<div id="div-settings">
 			<span id="vol-ctrl">Volume Control</span>
 			<label for="vol-up" id="l-vol-up">
@@ -29,10 +39,113 @@
 			</label>
 		</div>
 
-		<input type="button" id="level" style="background: url('./images/controls/big_button.png') no-repeat; background-size: 101% 104%;" value="Level 1-1">
+		<!-- Level Selector Button -->
+		<input type="button" id="level" style="background: url('./images/controls/big_button.png') no-repeat; background-size: 101% 104%;" value="Level 2-1">
 
-		<audio id="mp3" loop="loop"></audio>
-	</div>
-	<script type="text/javascript" src="./js/home.js"></script>
+	</div><script type="text/javascript" src="./js/home.js"></script>
+
+
+
+	<!-- Game Section -->
+	<div id="game-container">
+
+		<!-- Boton test -->
+		<input type="button" id="test" style="width: 20px; height: 8px;">
+
+		<!-- Plants Picker Section -->
+		<div id="plant-picker">
+			<p>choose your plants</p>
+			<div id="div-table-plants">
+				<table id="table-plants">
+					<thead>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div><script type="text/javascript" src="./js/game.js"></script>
 </body>
 </html>

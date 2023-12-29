@@ -1,0 +1,83 @@
+@font-face {
+	font-family: 'Base';
+	src: url('../fonts/Base.ttf') format('truetype');
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Base';
+	text-shadow: 2px 2px white;
+}
+
+html, body {
+	height: 100%;
+}
+
+
+
+#game-container {
+	display: none;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background-position-y: bottom !important;
+	transition: all cubic-bezier(.29, 1.01, 1, -0.68) 1s;
+}
+
+#plant-picker {
+	display: flex;
+	flex-flow: row wrap;
+	width: 60%;
+	height: 90%;
+	background: rgba(143,67,27,255);
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    border-radius: 10px;
+}
+
+#plant-picker p {
+	height: fit-content;
+	color: rgba(213,159,43,255);
+	font-size: 1.5rem;
+	text-transform: uppercase;
+    text-shadow: 2px 2px black;
+}
+
+#div-table-plants {
+	width: 95%;
+    height: 90%;
+    box-shadow: inset 0 0 30px 10px rgba(0,0,0,0.5);
+    background: rgb(87, 40, 16);
+    border-radius: 10px;
+    overflow-y: overlay;
+}
+
+#div-table-plants::-webkit-scrollbar {width: 0;}
+
+#table-plants {
+	width: 100%;
+	padding: 0.5rem;
+}
+
+#table-plants thead {
+	position: fixed;
+	height: 7rem;
+	width: fit-content;
+	z-index: 10;
+	background: rgba(143,67,27,255);
+}
+	
+#table-plants tbody {
+    position: relative;
+    top: 7.5rem;
+}
+
+#table-plants tbody td {
+	height: 7rem;
+	outline: 2px solid black;
+}
+
