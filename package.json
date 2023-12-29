@@ -1,18 +1,27 @@
 {
   "name": "pvsz_electron",
   "version": "1.0.0",
-  "description": "App able to be run in Windows, Linux, MacOS and Android?",
+  "description": "App able to be run in Windows, Linux, MacOS and no Android is beyond limits",
   "main": "index.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "author": "Gama RS",
   "license": "ISC",
   "devDependencies": {
+    "@electron-forge/cli": "^7.2.0",
+    "@electron-forge/maker-deb": "^7.2.0",
+    "@electron-forge/maker-rpm": "^7.2.0",
+    "@electron-forge/maker-squirrel": "^7.2.0",
+    "@electron-forge/maker-zip": "^7.2.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.2.0",
     "electron": "^28.1.0"
   },
   "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
     "jquery": "^3.7.1"
   }
 }
