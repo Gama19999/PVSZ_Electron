@@ -1,0 +1,104 @@
+@font-face {
+	font-family: 'Base';
+	src: url('../fonts/Base.ttf') format('truetype');
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Base';
+	text-shadow: 2px 2px white;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background: url('../images/home/back_ini.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+
+input[type='button'] {
+	border: none;
+	cursor: pointer;
+}
+input[type='button']:active {
+	outline: none;
+	transform: scale(0.9);
+}
+
+label {
+	width: 100%;
+	height: fit-content;
+	text-align: center;
+}
+
+
+#container {
+	display: grid;
+	grid-template-columns: 1fr 25% 2%;
+	grid-template-rows: repeat(20, 1fr);
+	height: 100%;
+	justify-items: center;
+	align-items: center;
+}
+
+#btn-settings {
+	background: url('../images/controls/settings.png') no-repeat;
+	background-size: 60px 60px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	grid-column: 2;
+	grid-row: 2 / 4;
+	justify-self: flex-end;
+}
+
+#div-settings {
+	background: url('../images/home/conf_surf.jpg') no-repeat;
+	background-size: 100% 100%;
+	grid-column: 2;
+	grid-row: 4 / 9;
+	width: 100%;
+	height: 100%;
+	border-radius: 1rem;
+	box-shadow: 5px 10px 7px 0 rgba(0,0,0,0.5);
+	display: none;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 20% 1fr;
+	padding: 0.5rem;
+	align-items: center;
+}
+
+#vol-ctrl {
+	grid-column: 1 / 4;
+	grid-row: 1;
+	width: 100%;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.vol-buttons {
+	background-size: 50px 50px !important;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+#l-vol-up {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+#l-vol-mut {
+	grid-column: 2;
+	grid-row: 2;
+}
+
+#l-vol-down {
+	grid-column: 3;
+	grid-row: 2;
+}
+

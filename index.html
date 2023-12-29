@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Plants VS Zombies</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link rel="icon" href="./images/icon.png">
+	<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+	<div id="container">
+		<input type="button" id="btn-settings">
+
+		<div id="div-settings">
+			<span id="vol-ctrl">Volume Control</span>
+			<label for="vol-up" id="l-vol-up">
+				<input type="button" id="vol-up" class="vol-buttons" style="background: url('./images/controls/volume_up.png') no-repeat"><br>
+				Vol Up
+			</label>
+			<label for="vol-mut" id="l-vol-mut">
+				<input type="button" id="vol-mut" class="vol-buttons" style="background: url('./images/controls/mute.png') no-repeat" data-mute="false"><br>
+				Mute
+			</label>
+			<label for="vol-down" id="l-vol-down">
+				<input type="button" id="vol-down" class="vol-buttons" style="background: url('./images/controls/volume_down.png') no-repeat"><br>
+				Vol Down
+			</label>
+		</div>
+
+		<audio id="mp3" loop="loop"></audio>
+	</div>
+	<script type="text/javascript" src="./js/home.js"></script>
+</body>
+</html>
