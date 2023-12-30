@@ -3,7 +3,7 @@ $(document).ready(() => {
 		$(elem).on('click', home_btn_click);
 	});
 
-	$("#game-container input[type='button']").each((indx, elem) => {
+	$("#game-area input[type='button']").each((indx, elem) => {
 		$(elem).on('click', game_btn_click);
 	});
 });

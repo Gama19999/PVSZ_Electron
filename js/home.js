@@ -53,10 +53,15 @@ function start_game(lvl) {
 
 	}*/
 
-	$("#game-container").css({
+	$("#plant-picker-container").css({
 		"background": `url('./images/game/levels/${lvl}/back.png') no-repeat`,
 		"background-size": "100% 100%",
 		"display": "flex"
+	});
+
+	$("#game-area").css({
+		"background": `url('./images/game/levels/${lvl}/back.png') no-repeat`,
+		"background-size": "100% 100%"
 	});
 
 	$("#mp3").attr('src', `./sounds/levels/${lvl}/back.mp3`);
