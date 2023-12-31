@@ -1,4 +1,7 @@
 $(document).ready(() => {
+	// Check for existance of game data
+	check_game_data();
+
 	// Music controls
 	$("#mp3").attr('src', './sounds/intro.mp3');
 	$("#mp3").get(0).play();
@@ -36,17 +39,18 @@ $(document).ready(() => {
 	});
 
 	$("#level").on('click', () => {
-		let lvl = $("#level").val().substring(0,1);
-		console.log(lvl);
+		let value = $("#level").val();
+		let scene = value != '' ? value.substring(0,1) : 1;
+		let lvl = value != '' ? value[value.length-2] : 1;
 
 		// TODO process lvl
 
-		start_game(lvl);
+		start_game(scene, lvl);
 	});
 	
 });
 
-function start_game(lvl) {
+function start_game(scene, lvl) {
 	$("#home-container").css("display","none");
 
 	/*switch (lvl) {
@@ -54,16 +58,16 @@ function start_game(lvl) {
 	}*/
 
 	$("#plant-picker-container").css({
-		"background": `url('./images/game/levels/${lvl}/back.png') no-repeat`,
+		"background": `url('./images/game/levels/${scene}/back.png') no-repeat`,
 		"background-size": "100% 100%",
 		"display": "flex"
 	});
 
 	$("#game-area").css({
-		"background": `url('./images/game/levels/${lvl}/back.png') no-repeat`,
+		"background": `url('./images/game/levels/${scene}/back.png') no-repeat`,
 		"background-size": "100% 100%"
 	});
 
-	$("#mp3").attr('src', `./sounds/levels/${lvl}/back.mp3`);
+	$("#mp3").attr('src', `./sounds/levels/${scene}/back.mp3`);
 	$("#mp3").get(0).play();
 }

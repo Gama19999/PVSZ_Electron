@@ -13,7 +13,7 @@ function ready_set_plant() {
 	setTimeout(() => {
 		// TODO Ready Set Plant ....
 
-		$("#game-area").css("background-size","137% 90%");
+		$("#game-area").css("background-size","136% 90%");
 
 		// Reveal settings button
 		$("#g-btn-settings").css("opacity","1");

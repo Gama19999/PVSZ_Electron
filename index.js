@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
-const { app, Menu, BrowserWindow, screen } = require('electron');
+const { app, Menu, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path');
+const fs = require('node:fs');
 
 function createWindow() {
 	// Create the browser window
@@ -15,11 +16,26 @@ function createWindow() {
 		}
 	});
 
+	// Maximize the window and block resizing
 	win.maximize();
 	win.setResizable(false);
 
+	// Write scene game (day, night, pool, roof) and level to a file 
+	ipcMain.on('writeLevel', (scene, lvl) => {
+		let game = scene + '-' + lvl;
+		fs.writeFile(path.join('data', 'game'), game, (err) => {
+			if (err) {
+				console.log(err);
+				return;
+			}
+		});
+	});
+
 	// Load the index.html of the app
 	win.loadFile('index.html');
+
+	// Open DevTools
+	win.webContents.openDevTools();
 
 	// Set frame rate
 	win.webContents.setFrameRate(60);
@@ -33,11 +49,17 @@ Menu.setApplicationMenu(null);
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-	let medidas = screen.getPrimaryDisplay().size;
-	let realmed = screen.getPrimaryDisplay().workAreaSize;
 
-	console.log("Screen: ",medidas);
-	console.log("WorkArea: ",realmed);
+	// Read scene game and level from a file to return it to render
+	ipcMain.handle('readLevel', () => {
+		fs.readFile(path.join('data', 'game'), (err, data) => {
+			if (err) {
+				console.log(err);
+				return;
+			}
+			console.log("From main p: ", data);
+		});
+	});
 
 	createWindow();
 
