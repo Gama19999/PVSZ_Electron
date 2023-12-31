@@ -10,7 +10,6 @@ $(document).ready(() => {
 
 function home_btn_click() {
 	let tmp = new Audio('./sounds/SFX/SFX gravebutton.mp3');
-	//tmp.volume = 0.8;
 	tmp.play();
 }
 

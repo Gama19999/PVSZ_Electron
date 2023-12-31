@@ -36,7 +36,7 @@ $(document).ready(() => {
 	});
 
 	$("#level").on('click', () => {
-		let lvl = $("#level").val().substring(6,7);
+		let lvl = $("#level").val().substring(0,1);
 		console.log(lvl);
 
 		// TODO process lvl

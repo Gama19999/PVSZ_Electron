@@ -1,19 +1,22 @@
 // Modules to control application life and create native browser window
-const { app, Menu, BrowserWindow } = require('electron');
+const { app, Menu, BrowserWindow, screen } = require('electron');
 const path = require('node:path');
-
 
 function createWindow() {
 	// Create the browser window
 	const win = new BrowserWindow({
-		width: 950,
+		width: 800,
 		height: 600,
+		movable: false,
 		offscreen: true,
 		icon: path.join(__dirname, 'images', 'icon.png'),
 		webPreferences: {
 			preload: path.join(__dirname, 'js', 'preload.js')
 		}
 	});
+
+	win.maximize();
+	win.setResizable(false);
 
 	// Load the index.html of the app
 	win.loadFile('index.html');
@@ -30,6 +33,12 @@ Menu.setApplicationMenu(null);
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+	let medidas = screen.getPrimaryDisplay().size;
+	let realmed = screen.getPrimaryDisplay().workAreaSize;
+
+	console.log("Screen: ",medidas);
+	console.log("WorkArea: ",realmed);
+
 	createWindow();
 
 	app.on('activate', () => {
