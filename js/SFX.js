@@ -9,12 +9,17 @@ $(document).ready(() => {
 });
 
 function home_btn_click() {
-	let tmp = new Audio('./sounds/SFX/SFX gravebutton.mp3');
-	tmp.play();
+	new Audio('./sounds/SFX/SFX gravebutton.mp3').play();
 }
 
 function game_btn_click() {
-	let tmp = new Audio('./sounds/SFX/SFX buttonclick.mp3');
-	tmp.volume = 0.5;
-	tmp.play();
+	new Audio('./sounds/SFX/SFX buttonclick.mp3').play();
+}
+
+function buzzer() {
+	new Audio('./sounds/SFX/SFX buzzer.mp3').play();
+}
+
+function seedlift() {
+	new Audio('./sounds/SFX/SFX seedlift.mp3').play();
 }

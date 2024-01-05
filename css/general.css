@@ -18,6 +18,8 @@ input[type='button'] {
 	cursor: pointer;
 }
 
+input[type='button']:focus {outline: none;}
+
 input[type='button']:hover {filter: brightness(2.0);}
 
 input[type='button']:active {

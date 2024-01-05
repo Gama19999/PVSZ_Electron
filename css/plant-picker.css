@@ -1,0 +1,100 @@
+.text-plant-picker {
+	color: rgba(213,159,43,255);
+	font-size: 1.5rem;
+	text-shadow: 2px 2px black;
+	height: fit-content;
+    width: fit-content;
+}
+
+#plant-picker-container {
+	display: none;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+#plant-picker {
+	display: flex;
+	flex-flow: row wrap;
+	width: 60%;
+	height: 90%;
+	background: rgba(143,67,27,255);
+    justify-content: center;
+    align-items: center;
+    padding: 0.3rem;
+    border-radius: 10px;
+}
+
+#plant-picker p {
+	text-transform: uppercase;
+    margin-left: 6rem;
+}
+
+#lets-rock {
+    position: relative;
+    left: 9rem;
+    padding: 0 1rem;
+    background: rgb(87, 40, 16);
+    border-radius: 6px;
+    box-shadow: 4px 4px 5px 0 rgba(0,0,0,0.5);
+}
+
+#lets-rock:active {box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);}
+
+#div-table-plants {
+	width: 95%;
+    height: 90%;
+    box-shadow: inset 0 0 30px 10px rgba(0,0,0,0.5);
+    background: rgb(87, 40, 16);
+    border-radius: 10px;
+    overflow-y: overlay;
+}
+
+#div-table-plants::-webkit-scrollbar {width: 0;}
+
+#table-plants {
+	width: 100%;
+	padding: 0.5rem;
+}
+
+#table-plants thead {
+	position: fixed;
+	display: flex;
+	flex-flow: row wrap;
+	height: 7.5rem;
+	width: fit-content;
+	border-radius: 5px;
+	z-index: 2;
+	background: rgba(143,67,27,255);
+}
+
+#table-plants tbody {
+	display: flex;
+	flex-flow: row wrap;
+    position: relative;
+    top: 8.5rem;
+    gap: 0.5rem 0;
+}
+
+#table-plants thead tr,
+#table-plants tbody tr {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	gap: 0 8px;
+	padding: 0 5px;
+}
+
+#table-plants thead td,
+#table-plants tbody td {
+	width: 75px;
+	height: 6.5rem;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.5);
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+#table-plants tbody td:hover {transform: scale(1.15);}
+	

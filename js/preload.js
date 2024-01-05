@@ -3,6 +3,5 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('pvsz', {
-	writeLevel: (scene, lvl) => ipcRenderer.send('writeLevel', scene, lvl),
-	readLevel: () => ipcRenderer.invoke('readLevel')
+	writeLevel: (scene, lvl) => ipcRenderer.send('writeLevel', scene, lvl)
 });
