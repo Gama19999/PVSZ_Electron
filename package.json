@@ -1,5 +1,5 @@
 {
-  "name": "pvsz_electron",
+  "name": "Plants VS Zombies",
   "version": "1.0.0",
   "description": "App able to be run in Windows, Linux, MacOS and no Android is beyond limits",
   "main": "index.js",

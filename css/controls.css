@@ -1,0 +1,139 @@
+/* HOME SECTION CONTROLS */
+.vol-buttons {
+	background-size: 50px 50px !important;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.btn-settings {
+	background: url('../images/controls/settings.png') no-repeat;
+	background-size: 60px 60px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	grid-column: 19 / 20;
+	grid-row: 2 / 4;
+	justify-self: flex-end;
+}
+
+.div-settings {
+	background: url('../images/home/conf_surf.jpg') no-repeat;
+	background-size: 100% 100%;
+	grid-column: 16 / 20;
+	grid-row: 4 / 9;
+	width: 100%;
+	height: 100%;
+	border-radius: 1rem;
+	box-shadow: 5px 10px 7px 0 rgba(0,0,0,0.5);
+	display: none;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 20% 1fr;
+	padding: 0.5rem;
+	align-items: center;
+}
+
+.vol-ctrl {
+	grid-column: 1 / 4;
+	grid-row: 1;
+	width: 100%;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.l-vol-up {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.l-vol-mut {
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.l-vol-down {
+	grid-column: 3;
+	grid-row: 2;
+}
+
+
+
+
+/* GAME SECTION CONTROLS */
+.game-ctrl {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	grid-row: 1 / 3;
+	justify-self: center;
+}
+
+.btn-cc {
+	background: url('../images/controls/big_button.png') no-repeat;
+	background-size: 100% 100%;
+	grid-row: 3;
+	font-size: 1.5rem;
+	width: 80%;
+	height: 80%;
+	border-radius: 10px;
+}
+
+.btn-cc:hover {filter: brightness(115%) !important;}
+
+#g-btn-home {
+	background: url('../images/controls/home.png') no-repeat;
+	background-size: 60px 60px;
+	grid-column: 34 / 36;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+#g-btn-pause {
+	background: url('../images/controls/pause.png') no-repeat;
+	background-size: 60px 60px;
+	grid-column: 36 / 38;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+#g-btn-settings {
+	background: url('../images/controls/settings.png') no-repeat;
+	background-size: 60px 60px;
+	grid-column: 38 / 40;
+	opacity: 0;
+	transition: opacity 1s;
+}
+
+#g-div-settings {
+	grid-column: 33 / 40;
+	grid-row: 3 / 8;
+}
+
+#pause-text {
+	display: none;
+	grid-column: 15 / 29;
+	grid-row: 8 / 14;
+	align-items: flex-end;
+    justify-content: center;
+	font-size: 10rem;
+	text-transform: uppercase;
+	color: red;
+	text-shadow: 4px 4px black;
+	z-index: 2;
+}
+
+#leaving-game {
+	display: none;
+	grid-column: 15 / 29;
+	grid-row: 8 / 14;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	background: url('../images/home/conf_surf.jpg') no-repeat;
+	background-size: 100% 100%;
+	border-radius: 10px;
+    box-shadow: 6px 6px 10px 6px rgba(0,0,0,0.5);
+    font-size: 2rem;
+    justify-items: center;
+    align-items: center;
+	z-index: 3;
+}

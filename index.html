@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Plants VS Zombies</title>
 	<link rel="stylesheet" type="text/css" href="./css/general.css">
+	<link rel="stylesheet" type="text/css" href="./css/controls.css">
 	<link rel="stylesheet" type="text/css" href="./css/home.css">
 	<link rel="stylesheet" type="text/css" href="./css/plant-picker.css">
 	<link rel="stylesheet" type="text/css" href="./css/game.css">
@@ -53,8 +54,11 @@
 		<div id="plant-picker">
 			<p class="text-plant-picker">choose your plants</p>
 
+			<!-- Return Home Button -->
+			<input type="button" id="ppkr-home" value="BACK HOME" class="text-plant-picker button-plant-picker" onclick="game_btn_click()">
+
 			<!-- Start Game Button -->
-			<input type="button" id="lets-rock" value="LET'S ROCK!" class="text-plant-picker" onclick="game_btn_click()">
+			<input type="button" id="lets-rock" value="LET'S ROCK!" class="text-plant-picker button-plant-picker" onclick="game_btn_click()">
 
 			<div id="div-table-plants">
 				<table id="table-plants">
@@ -71,8 +75,14 @@
 	<!-- Game Area Section -->
 	<div id="game-area" class="game-container">
 
+		<!-- Home Button -->
+		<input type="button" id="g-btn-home" class="game-ctrl" onclick="sfx_pause()">
+
+		<!-- Pause Button -->
+		<input type="button" id="g-btn-pause" class="game-ctrl" data-pause="false">
+
 		<!-- Settings Button -->
-		<input type="button" id="g-btn-settings" class="btn-settings">
+		<input type="button" id="g-btn-settings" class="game-ctrl">
 
 		<!-- Settings Panel -->
 		<div id="g-div-settings" class="div-settings">
@@ -90,6 +100,23 @@
 				Vol Down
 			</label>
 		</div>
+		<script type="text/javascript" src="./js/game_controls.js"></script>
+
+
+		<!-- Pause Text -->
+		<div id="pause-text">pause...</div>
+
+		<!-- Prompt to advise leaving current game -->
+		<div id="leaving-game">
+			<span style="grid-column:1/6;grid-row:1;">Wanna leave current game really?</span>
+			<span style="grid-column:1/6;grid-row:2;">Your progress will be lost!</span>
+			<input type="button" id="g-btn-cancel" class="btn-cc" style="grid-column:1/3;color:red;" value="Cancel">
+			<input type="button" id="g-btn-confirm" class="btn-cc" style="grid-column:4/6;color:darkgreen;" value="Confirm">
+		</div>
+
+
+		<!-- Grid To Place Plants & Zombies -->
+
 			
 	</div><script type="text/javascript" src="./js/game.js"></script>
 </body>

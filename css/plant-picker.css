@@ -6,12 +6,18 @@
     width: fit-content;
 }
 
+.button-plant-picker {
+	padding: 0 1rem;
+    background: rgb(87, 40, 16);
+    border-radius: 6px;
+    box-shadow: 4px 4px 5px 0 rgba(0,0,0,0.5);
+}
+
 #plant-picker-container {
 	display: none;
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
 }
 
 #plant-picker {
@@ -28,16 +34,17 @@
 
 #plant-picker p {
 	text-transform: uppercase;
-    margin-left: 6rem;
+    margin-left: 17rem;
+}
+
+#ppkr-home {
+	position: relative;
+	right: 29rem;
 }
 
 #lets-rock {
     position: relative;
-    left: 9rem;
-    padding: 0 1rem;
-    background: rgb(87, 40, 16);
-    border-radius: 6px;
-    box-shadow: 4px 4px 5px 0 rgba(0,0,0,0.5);
+    left: 0rem;
 }
 
 #lets-rock:active {box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);}
@@ -63,10 +70,11 @@
 	display: flex;
 	flex-flow: row wrap;
 	height: 7.5rem;
-	width: fit-content;
+	width: 47rem;
 	border-radius: 5px;
 	z-index: 2;
 	background: rgba(143,67,27,255);
+	box-shadow: 0 6px 5px 0 rgba(0,0,0,0.7), 0 -4px 5px 0 rgba(0,0,0,0.7);
 }
 
 #table-plants tbody {

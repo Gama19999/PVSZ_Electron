@@ -23,3 +23,7 @@ function buzzer() {
 function seedlift() {
 	new Audio('./sounds/SFX/SFX seedlift.mp3').play();
 }
+
+function sfx_pause() {
+	new Audio('./sounds/SFX/SFX pause.mp3').play();
+}

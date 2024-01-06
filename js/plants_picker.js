@@ -1,11 +1,29 @@
 $(document).ready(() => {
 	check_plants();
+	
+	// Start game with picked plants
 	$("#lets-rock").on('click', resize_back);
+
+	$("#ppkr-home").on('click', ppkr_back_home);
 });
 
 function resize_back() {
 	$("#plant-picker-container").css("display","none");
-	ready_set_plant();
+	ready_set_plant(); // Init game
+}
+
+// Returns to home
+function ppkr_back_home() {
+	$("#plant-picker-container").css("display","none");
+
+	// Unpick any plant seleted and change css
+	for (let i of $("#pkd-row").children()) {
+		pkd_plant_clicked(i, false);
+	}
+
+	$("#home-container").css("display","grid");
+	$("#mp3").attr('src', `./sounds/intro.mp3`);
+	$("#mp3").get(0).play();
 }
 
 // Starts the animation ready set plant and loads picked plants
@@ -16,10 +34,12 @@ function ready_set_plant() {
 		// TODO Ready Set Plant ....
 		// TODO Load picked plants
 
-		$("#game-area").css("background-size","136% 90%");
-
-		// Reveal settings button
+		// Reveal settings & home buttons
 		$("#g-btn-settings").css("opacity","1");
+		$("#g-btn-home").css("opacity","1");
+		$("#g-btn-pause").css("opacity","1");
+
+		$("#game-area").css("background-size","135% 93%");
 	}, 2000);
 }
 
@@ -100,7 +120,7 @@ function owned_clicked(self) {
 
 	seedlift();
 
-	let td = $(`<td id='pkd-${idPlant}' data-plant='${idPlant}' onclick='pkd_plant_clicked(this)'></td>`);
+	let td = $(`<td id='pkd-${idPlant}' data-plant='${idPlant}' onclick='pkd_plant_clicked(this, true)'></td>`);
 
 	$(self).css("filter","brightness(0.6)");
 
@@ -113,13 +133,12 @@ function owned_clicked(self) {
 }
 
 // Event handler for already picked plant clicked
-function pkd_plant_clicked(self) {
+function pkd_plant_clicked(self, sfx) {
 	let idSelf = $(self).attr("id");
 	let idPlant = $(self).attr("data-plant");
 
-	seedlift();
+	if (sfx) seedlift();
 
 	$(`#${idPlant}`).css("filter","brightness(1.0)");
 	$(`#${idSelf}`).remove();
-	console.log("attempitng to remove picked: ",idSelf);
 }
