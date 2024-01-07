@@ -13,6 +13,7 @@
 	<script type="text/javascript" src="./js/jquery-3.7.1.min.js"></script>
 	<script type="text/javascript" src="./js/SFX.js"></script>
 	<script type="text/javascript" src="./js/existance_game_data.js"></script>
+	<script type="text/javascript" src="./js/top_bar_plants_handlers.js"></script>
 </head>
 <body>
 	<!-- Background music element -->
@@ -58,7 +59,7 @@
 			<input type="button" id="ppkr-home" value="BACK HOME" class="text-plant-picker button-plant-picker" onclick="game_btn_click()">
 
 			<!-- Start Game Button -->
-			<input type="button" id="lets-rock" value="LET'S ROCK!" class="text-plant-picker button-plant-picker" onclick="game_btn_click()">
+			<input type="button" id="lets-rock" value="LET'S ROCK!" class="text-plant-picker button-plant-picker">
 
 			<div id="div-table-plants">
 				<table id="table-plants">
@@ -76,7 +77,7 @@
 	<div id="game-area" class="game-container">
 
 		<!-- Home Button -->
-		<input type="button" id="g-btn-home" class="game-ctrl" onclick="sfx_pause()">
+		<input type="button" id="g-btn-home" class="game-ctrl">
 
 		<!-- Pause Button -->
 		<input type="button" id="g-btn-pause" class="game-ctrl" data-pause="false">
@@ -102,9 +103,8 @@
 		</div>
 		<script type="text/javascript" src="./js/game_controls.js"></script>
 
-
 		<!-- Pause Text -->
-		<div id="pause-text">pause...</div>
+		<div id="pause-text" class="fill-text">pause...</div>
 
 		<!-- Prompt to advise leaving current game -->
 		<div id="leaving-game">
@@ -114,10 +114,21 @@
 			<input type="button" id="g-btn-confirm" class="btn-cc" style="grid-column:4/6;color:darkgreen;" value="Confirm">
 		</div>
 
+		<!-- Sun, Plants and Shovel Bar -->
+		<div id="top-bar">
+			<div id="sun-meter">
+				<img id="sun-pic" src="./images/game/fromsky/sun.webp" alt="sun" width="90%" style="margin: 2px 0 0 1px;">
+			</div>
+			<input type="text" id="sun-paper" value="0" readonly>
+			<ul id="game-plants"></ul>
+		</div>
 
-		<!-- Grid To Place Plants & Zombies -->
 
-			
+	<!-- Section To Place Plants & Zombies -->			
+	<!--div id="cartesiano"></div-->
+
+
+
 	</div><script type="text/javascript" src="./js/game.js"></script>
 </body>
 </html>

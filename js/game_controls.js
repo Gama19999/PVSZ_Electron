@@ -1,6 +1,7 @@
 $(document).ready(() => {
 	// Settings button event handlers
 	$("#g-btn-settings").on('click', () => {
+		game_btn_click();
 		let visible = $("#g-div-settings").css("display") == "none" ? false : true;
 		if (visible) $("#g-div-settings").css("display","none");
 		else $("#g-div-settings").css("display","grid");

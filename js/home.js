@@ -43,7 +43,7 @@ $(document).ready(() => {
 		let scene = value != '' ? value.substring(0,1) : 1;
 		let lvl = value != '' ? value[value.length-2] : 1;
 
-		// TODO process lvl
+		// --------> TODO process lvl
 
 		start_game(scene, lvl);
 	});
@@ -53,6 +53,7 @@ $(document).ready(() => {
 function start_game(scene, lvl) {
 	$("#home-container").css("display","none");
 
+	// --------> TODO process lvl
 	/*switch (lvl) {
 
 	}*/
@@ -68,6 +69,8 @@ function start_game(scene, lvl) {
 		"background-size": "100% 100%"
 	});
 
-	$("#mp3").attr('src', `./sounds/levels/${scene}/back.mp3`);
+	$("#game-area").attr("data-scene",`${scene}`);
+
+	$("#mp3").attr('src', `./sounds/levels/Choose Your Seeds.mp3`);
 	$("#mp3").get(0).play();
 }
