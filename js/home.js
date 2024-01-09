@@ -1,3 +1,5 @@
+let RUNNING = false; // STATE OF GAME
+
 $(document).ready(() => {
 	// Check for existance of game data
 	check_game_data();
@@ -70,6 +72,9 @@ function start_game(scene, lvl) {
 	});
 
 	$("#game-area").attr("data-scene",`${scene}`);
+
+	// Add scene to div "cartesiano"
+	$("#cartesiano").attr("data-scene",`${scene}`);
 
 	$("#mp3").attr('src', `./sounds/levels/Choose Your Seeds.mp3`);
 	$("#mp3").get(0).play();

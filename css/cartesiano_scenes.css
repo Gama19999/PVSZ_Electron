@@ -1,0 +1,17 @@
+.scene-1,
+.scene-2 {
+	grid-column: 9 / 41;
+	grid-row: 4 / 20;
+}
+
+.scene-3,
+.scene-4 {
+	grid-column: 9 / 40;
+	grid-row: 4 / 21;
+}
+
+.scene-5,
+.scene-6 {
+	grid-column: 10 / 40;
+	grid-row: 4 / 21;
+}

@@ -1,4 +1,10 @@
-$(document).ready(() => {
 
-});
+
+while (RUNNING) {
+
+}
+
+	
+
+
 

@@ -105,3 +105,13 @@
 	cursor: grab;
 	transform: scale(1.05);
 }
+
+
+
+
+#cartesiano {
+	display: gird;
+	grid-template-columns: repeat(30, 1fr);
+	grid-template-rows: repeat(15, 1fr);
+	outline: 2px solid lime;
+}

@@ -10,7 +10,7 @@ $(document).ready(() => {
 
 function resize_back() {
 	$("#plant-picker-container").css("display","none");
-	set_game(); // SETUP GAME
+	init_game(); // INIT GAME
 }
 
 // Returns to home
@@ -28,7 +28,9 @@ function ppkr_back_home() {
 }
 
 // Loads the animation ready set plant and sets up picked plants
-function set_game() {
+// STARTS GAME
+function init_game() {
+	RUNNING = true;
 	$("#game-area").css("display","grid");
 	$("#mp3").trigger("pause");
 
@@ -42,7 +44,11 @@ function set_game() {
 		$("#mp3").get(0).play();
 
 		// Resize background
-		$("#game-area").css("background-size","135% 93%");
+		if ($("#cartesiano").attr("data-scene") == 3 || $("#cartesiano").attr("data-scene") == 4) {
+			$("#game-area").css("background-size","138% 93%");	
+		} else {
+			$("#game-area").css("background-size","135% 93%");
+		}
 	}, 2500);
 
 	setTimeout(() => {
@@ -58,6 +64,9 @@ function set_game() {
 
 		// Reveal plants in top bar
 		plants_to_topbar();
+
+		// Create columns and rows according to scene
+		cartesiano();
 	}, 3300);
 }
 
@@ -202,4 +211,29 @@ function plants_to_topbar() {
 	}
 
 	seeds.forEach((i) => $("#game-plants").append(i));
+}
+
+
+// Sets up the grid for plants and zombies
+function cartesiano() {
+	let rxc = new Map(
+		[["1","5-10"],["2","5-10"],["3","6-10"],
+		["4","6-10"],["5","5-9"],["6","5-9"]]
+	);
+	let scene = $("#cartesiano").attr("data-scene");
+	let r = rxc.get(scene).split('-')[0];
+	let c = rxc.get(scene).split('-')[1];
+
+	$("#cartesiano").addClass(`scene-${scene}`);
+
+	for (let row = 0; row < r; row++) {
+		let tr = $(`<tr id='tr-${row+1}'></tr>`);
+
+		for (let col = 0; col < c; col++) {
+			let td = $(`<td id='td-${row+1}-${col+1}'></td>`);
+			tr.append(td);
+		}
+
+		$("#cartesiano").append(tr);
+	}
 }
